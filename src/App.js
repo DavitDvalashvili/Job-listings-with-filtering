@@ -1,23 +1,42 @@
-import Joblist from "./components/Joblist";
 import "./App.css";
+import data from "./data.json"
+import Jobs from "./components/Jobs"
+import Header from "./components/Header"
 import { useState } from "react";
-//import data from "../data.json";
-import FilterItem from "./components/FilterItem";
+
 
 
 function App() {
-  const [filterByItems, setFilterByItems] = useState("");
+  const [filterKeywords, setfilterKeywords] = useState([]);
+
+  const addFilterKeywords = (data) => {
+    if (!filterKeywords.includes(data)) {
+      setfilterKeywords([...filterKeywords, data]);
+    }
+  };
+
+  const deleteKeywords = (data) => {
+    const newKeyword = filterKeywords.filter((key) => 
+      key !== data
+    )
+    setfilterKeywords(newKeyword)
+  }
+
+  const clearAll = () => {
+    setfilterKeywords([])
+  }
+
 
   return (
-    <div className="App">
-      <div className="searchbar">
-        {filterByItems.map((item)=> {
-          <FilterItem filterByItems={item}/>
-        })}
-        <span>clear</span>
-      </div>
-      <Joblist className="jobs" filterByItems={filterByItems} setFilterByItems={setFilterByItems}
-      />
+    <div>
+      <div className="header"> </div>
+      {filterKeywords.length > 0 && (
+        <Header
+          keywords={filterKeywords} deleteKeywords={deleteKeywords} clearAll={clearAll}
+        />
+      )}
+
+      <Jobs keywords={filterKeywords} data={data} setKeywords={addFilterKeywords}/>
     </div>
   );
 }
