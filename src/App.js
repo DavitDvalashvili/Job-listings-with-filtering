@@ -28,15 +28,18 @@ function App() {
 
 
   return (
-    <div>
-      <div className="header"> </div>
+    <div className="bg-[#EFFAFA] font-custom font-bold">
+      <div className=" h-[156px] bg-[#5CA5A5] bg-mobile bg-cover bg-no-repeat bg-center lg:bg-desktop  lg:mb-[36px] " >
+      </div>
       {filterKeywords.length > 0 && (
         <Header
           keywords={filterKeywords} deleteKeywords={deleteKeywords} clearAll={clearAll}
         />
       )}
 
-      <Jobs keywords={filterKeywords} data={data} setKeywords={addFilterKeywords}/>
+      <Jobs keywords={filterKeywords} data={data} setKeywords={addFilterKeywords}
+      
+      />
     </div>
   );
 }

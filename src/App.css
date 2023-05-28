@@ -1,3 +1,23 @@
-.jobs {
-    margin: 10px 0px;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
+body {
+    background-color: #EFFAFA;
+}
+.custom-shadow {
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+}
+.job-container {
+    @apply lg:max-w-[1110px] w-[100%] mt-10 px-6 pt-8 pb-[27px] bg-white rounded-[5px] custom-shadow  text-[13px] leading-3 relative lg:mt-6 lg:flex lg:justify-start items-center lg:px-10 lg:py-8
+}
+
+.featuredBorder {
+    border-left: 5px solid #5CA5A5;
+} 
