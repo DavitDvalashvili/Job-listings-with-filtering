@@ -8,6 +8,11 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background-color: #EFFAFA;
 }
