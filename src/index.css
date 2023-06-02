@@ -8,16 +8,13 @@ body, #root, .App {
 .App {
     height: 100%;
     margin: 120px 24px;
-    background-color: red;
 }
 .searchbar, .searchItems {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.searchbar {
-    background-color: green;
-}
+
 .image {
     width: 30px;
     height: 30px;
